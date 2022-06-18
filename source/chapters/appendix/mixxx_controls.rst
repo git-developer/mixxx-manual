@@ -780,7 +780,9 @@ Any control listed above for :mixxx:cogroupref:`[ChannelN]` will work for a samp
                    [PreviewDeckN],bpm_tap
                    [SamplerN],bpm_tap
 
-   When tapped repeatedly, adjusts the :term:`tempo` of the channel to match the tapped :term:`BPM`.
+   When tapped repeatedly, adjusts the :term:`BPM` of the track on the deck (not the tempo slider!) to match the taps.
+
+   .. note:: If you want to change the :term:`rate` of the deck use `script.bpm.tapButton(deck) <https://github.com/mixxxdj/mixxx/wiki/midi%20scripting#user-content-helper-functions>`_ in your controller mapping instead.
 
    :range: binary
    :feedback: :term:`BPM` value display (playback speed doesn't change)
@@ -1782,7 +1784,7 @@ Any control listed above for :mixxx:cogroupref:`[ChannelN]` will work for a samp
 
    This is a :ref:`ControlPotMeter control <appendix-mixxxcontrols-controlpotmeter>`.
 
-   :range: -6.0..6.0
+   :range: -6.0..6.0 semitones
    :feedback: Key display
 
    .. versionadded:: 2.0.0
@@ -1816,11 +1818,11 @@ Any control listed above for :mixxx:cogroupref:`[ChannelN]` will work for a samp
                    [PreviewDeckN],pitch_adjust
                    [SamplerN],pitch_adjust
 
-   Adjust the pitch in addition to the :term:`tempo` slider pitch.
+   Adjusts the pitch in addition to the :term:`tempo` slider pitch and keylock. It is reset after loading a new track.
 
    This is a :ref:`ControlPotMeter control <appendix-mixxxcontrols-controlpotmeter>`.
 
-   :range: -3.0..3.0
+   :range: -3.0..3.0 semitones
    :feedback: Key display
 
    .. versionadded:: 2.0.0
@@ -2254,7 +2256,7 @@ Any control listed above for :mixxx:cogroupref:`[ChannelN]` will work for a samp
       ===== =============================
       0     :term:`Sync lock <sync lock>` disabled for that deck
       1     Deck is sync follower
-      1     Deck is sync leader
+      2     Deck is sync leader
       ===== =============================
 
 .. mixxx:control:: [ChannelN],sync_key
@@ -3183,7 +3185,25 @@ Note that :mixxx:coref:`[Library],MoveUp` and other Move and Scroll controls emu
 
 .. mixxx:control:: [Library],GoToItem
 
-   Equivalent to double clicking the currently selected item
+   Triggers different actions, depending on which interface element currently has keyboard focus:
+
+   ========================  =============================================================================================================
+   **Search bar**
+   ---------------------------------------------------------------------------------------------------------------------------------------
+   text box                  moves focus to tracks table
+   ------------------------  -------------------------------------------------------------------------------------------------------------
+   Clear button              clears search text
+   ------------------------  -------------------------------------------------------------------------------------------------------------
+   **Sidebar**
+   ---------------------------------------------------------------------------------------------------------------------------------------
+   collapsed node            expands the item (except Tracks and Auto DJ)
+   ------------------------  -------------------------------------------------------------------------------------------------------------
+   leaf node                 moves focus to tracks table
+   ------------------------  -------------------------------------------------------------------------------------------------------------
+   **Tracks table**          Performs the action selected in :menuselection:`Preferences --> Library --> Track Double-Click Action` (default is "Load selected track"). Also see :menuselection:`Preferences --> Decks --> Playing track protection`
+   ------------------------  -------------------------------------------------------------------------------------------------------------
+   **Dialogs / popups**      presses :kbd:`Enter`. Note: the :mixxx:coref:`Move.. <[Library],MoveUp>` controls allow to move button focus.
+   ========================  =============================================================================================================
 
    :range: Binary
    :feedback: Context dependent

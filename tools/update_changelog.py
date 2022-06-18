@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import os
+import re
 
 import m2r2
 import requests
@@ -22,7 +23,7 @@ TEMPLATE = """
 
 
 def fetch_changelog(branch):
-    """ Fetch CHANGELOG.md from branch of mixxxdj/mixxx repository. """
+    """Fetch CHANGELOG.md from branch of mixxxdj/mixxx repository."""
     r = requests.get(
         "https://raw.githubusercontent.com/mixxxdj/mixxx/"
         f"{branch}/CHANGELOG.md"
@@ -32,7 +33,15 @@ def fetch_changelog(branch):
 
 
 def changelog_to_rst(changelog):
-    """ Convert changelog to RST format used by sphinx. """
+    """Convert changelog to RST format used by sphinx."""
+
+    changelog = re.sub(
+        r"^## \[?(\d+)\.(\d+)\.(\d+)(?:\]\([^\)]+\))?(?: \([^\)]+\))?$",
+        r".. _v\g<1>-\g<2>-\g<3>:\n\n\g<0>",
+        changelog,
+        flags=re.MULTILINE,
+    )
+
     return TEMPLATE.lstrip().format(content=m2r2.convert(changelog))
 
 

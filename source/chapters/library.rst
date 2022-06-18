@@ -26,6 +26,8 @@ tracks you want to play and load them into a :ref:`deck <interface-decks>` or
 imports your music library automatically when it is run for the first time, see
 :ref:`configuration-import` for more information.
 
+If you want to backup (or delete) your library refer to :ref:`appendix-settings-files` and look for ``mixxxdb.sqlite``.
+
 The sidebar on the left contains different collections of music. The track list
 view on the right displays the tracks in those collections.
 
@@ -127,7 +129,6 @@ Tracks - View and edit your whole collection
   Go to the chapter :ref:`library-previewing-tracks` for detailed information.
 
 **Cover/Album Art**
-
   Mixxx can display cover art it finds for a track in the library.
   It will search for available cover art in the following places in order and
   will use the first one it finds:
@@ -165,31 +166,43 @@ Track list context menu
 
 Right-clicking on selected tracks in the track list reveals the context menu:
 
-* **Add to Auto DJ**: Adds the content of the selection to either the
+* **Add to Auto DJ**
+
+  Adds the content of the selection to either the
   :guilabel:`bottom` or :guilabel:`top` of the :ref:`Auto DJ <library-auto-dj>`
   playlist for automatic mixing. The :guilabel:`replace` option deletes the
   Auto DJ queue first, and then fills it with the selected tracks.
 
-* **Load to**:
+* **Load to**
+
   Loads a selected file to one of the available
   :ref:`Decks <interface-decks>`, :ref:`Samplers <interface-sampler>` or to the
   :ref:`Preview Deck <interface-preview-deck>`. Alternatively
   simply drag it to the :ref:`interface-waveform`. The number of available decks
   and samplers might differ, depending on the selected skin. Note that you
   can't load multiple files at once.
-* **Add to Playlist**: Add selected tracks to an existing playlist, or drag the
+
+* **Add to Playlist**
+
+  Add selected tracks to an existing playlist, or drag the
   selection to a playlist crate in the sidebar. Choose :guilabel:`Create new
   playlist` to put them into a new playlist.
-* **Crates:** The checkbox shows in which existing crates the selection is in.
+
+* **Crates**
+
+  The checkbox shows in which existing crates the selection is in.
   Changing the crates selection does not collapse the menu, which allows
   much easier categorization of tracks without going through the menu from
   scratch. Choose :guilabel:`Create new Crate` to put them into a new crate.
 
 * **Select Color**
+
   Assign a color to all selected tracks to indicate mood, energy etc.
   Select the black button at the top left to remove the color.
 
-* **Metadata**:
+
+* **Metadata**
+
     * **Import from File Tags**: If the track's :term:`metadata` changes,
       (e.g. if you used iTunes to edit it,) this option lets you save the new
       values for the selected tracks to the Mixxx library. See
@@ -202,7 +215,7 @@ Right-clicking on selected tracks in the track list reveals the context menu:
       do not see changed metadata in other programs immediately, eject the track
       from all decks and samplers or shutdown Mixxx.
 
-    * **Cover Art**:
+    * **Cover Art**
 
       * **Choose New Cover**: Select an image from the file browser as the cover.
       * **Clear Cover**: Delete any cover information saved for this track.
@@ -210,7 +223,8 @@ Right-clicking on selected tracks in the track list reveals the context menu:
         :term:`tags <metadata>` or a picture in the track folder if the tags do
         not supply any.
 
-* **Clear**:
+* **Clear**
+
     * **BPM and Beatgrid**: Removes the :term:`BPM` and :term:`beatgrid` data
       from the selected tracks in the Mixxx library. After doing this, we
       recommend :ref:`analyzing <library-analyze>` the tracks again.
@@ -228,7 +242,7 @@ Right-clicking on selected tracks in the track list reveals the context menu:
     * **All**: Clears all of the data above from the Mixxx library database at
       once.
 
-* **Change BPM**:
+* **Change BPM**
 
     * Allows to change the :term:`BPM` to 50%, 66%, 75%, 133,33%, 150%, or
       200% of the BPM set by Mixxx when :ref:`analyzing <library-analyze>`
@@ -242,11 +256,19 @@ Right-clicking on selected tracks in the track list reveals the context menu:
       will set the status to "locked", and the icon changes to
       |ic_lib_bpm_locked|.
 
-* **Hide from Library**: Temporarily hides selected tracks from the track list.
+* **Hide from Library**
+
+  Temporarily hides selected tracks from the track list.
   Hidden tracks are listed in the :guilabel:`Hidden Tracks` menu item which is
   explained below.
-* **Open in File Browser**: Brings up the selected files in your file manager.
-* **Properties**: Similar to inline editing explained above, the properties
+
+* **Open in File Browser**
+
+  Brings up the selected files in your file manager.
+
+* **Properties**
+
+  Similar to inline editing explained above, the properties
   dialog allows you to view and edit metadata such as title, artist, album, and
   view the full file name and path. Note that you can not edit multiple files at
   once.
@@ -587,10 +609,14 @@ Fetching track metadata from MusicBrainz can fail:
 Using third-party software
 --------------------------
 
-If you have modified file metadata in third-party software, select
-:menuselection:`Library --> Rescan Library` in the menu on top of the
-application window. This prompts Mixxx to re-read the metadata from **all**
-tracks in the library.
+If you have edited file metadata in third-party software you need to re-import
+the modified metadata into Mixxx manually by selecting the affected tracks, open
+the context menu, and then choose :menuselection:`Metadata --> Import From File Tags`.
+
+.. hint:: Rescanning the library with :menuselection:`Library --> Rescan Library`
+          in the menu on top of the application window will only detect newly
+          added or removed tracks but no modifications of existing tracks. This
+          is a known limitation.
 
 Popular software to edit metadata of audio files include:
   * `Mp3tag <https://www.mp3tag.de/en/index.html>`_ (Windows)

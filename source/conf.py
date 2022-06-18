@@ -55,8 +55,8 @@ source_suffix = {
 master_doc = "index"
 
 # General information about the project.
-project = u"Mixxx"
-copyright = u"2011-2021, The Mixxx Development Team"
+project = "Mixxx"
+copyright = "2011-2021, The Mixxx Development Team"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -295,8 +295,8 @@ latex_documents = [
     (
         "index",
         "Mixxx-Manual.tex",
-        u"Mixxx User Manual",
-        u"The Mixxx Development Team",
+        "Mixxx User Manual",
+        "The Mixxx Development Team",
         "manual",
         True,
     ),
@@ -331,8 +331,8 @@ man_pages = [
     (
         "index",
         "mixxx",
-        u"Mixxx User Manual",
-        [u"The Mixxx Development Team"],
+        "Mixxx User Manual",
+        ["The Mixxx Development Team"],
         1,
     )
 ]
@@ -350,8 +350,8 @@ texinfo_documents = [
     (
         "index",
         "Mixxx",
-        u"Mixxx User Manual",
-        u"The Mixxx Development Team",
+        "Mixxx User Manual",
+        "The Mixxx Development Team",
         "Mixxx",
         "One line description of project.",
         "Miscellaneous",
@@ -374,10 +374,10 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u"Mixxx User Manual"
-epub_author = u"The Mixxx Development Team"
-epub_publisher = u"The Mixxx Development Team"
-epub_copyright = u"2011-2021, The Mixxx Development Team"
+epub_title = "Mixxx User Manual"
+epub_author = "The Mixxx Development Team"
+epub_publisher = "The Mixxx Development Team"
+epub_copyright = "2011-2021, The Mixxx Development Team"
 
 # The basename for the epub file. It defaults to the project name.
 # epub_basename = u'Mixxx'
@@ -447,6 +447,12 @@ linkcheck_ignore = [
     # Ignore Twitter links because for some reason valid links sometimes fail
     # with "400 Bad Request"
     r"^https://twitter.com/\w+$",
+    "https://support.native-instruments.com/hc/en-us/articles/360001108518",
+    "https://support.serato.com/hc/en-us/articles/203593924-Vestax-Hardware-Drivers-and-Firmware",
+    "https://www.numark.com/images/product_downloads/MixtrackPro3-UserGuide-v1.1.pdf",
+    "https://www.numark.com/product/*",
+    "https://www.pioneerdj.com/en/support/software/controller/*",
+    "https://www.roland.com/global/products/dj-505/downloads",
 ]
 
 # Avoid freezing during linkcheck

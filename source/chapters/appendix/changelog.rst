@@ -9,13 +9,78 @@
 Changelog
 =========
 
-`2.3.1 <https://launchpad.net/mixxx/+milestone/2.3.1>`_ (Unreleased)
+.. _v2-3-3:
+
+`2.3.3 <https://launchpad.net/mixxx/+milestone/2.3.3>`_ (unreleased)
 ------------------------------------------------------------------------
 
 
-* Added mapping for the Numark DJ2GO Touch controller `#4108 <https://github.com/mixxxdj/mixxx/pull/4108>`_
+* Pioneer DDJ-SB3: Fix controller breaking when releasing the shift button `#4659 <https://github.com/mixxxdj/mixxx/pull/4659>`_
+* Traktor S3: Push two deck switches to explicitly clone decks `#4665 <https://github.com/mixxxdj/mixxx/pull/4665>`_ `#4671 <https://github.com/mixxxdj/mixxx/pull/4671>`_ `lp:1960680 <https://bugs.launchpad.net/mixxx/+bug/1960680>`_
+* Behringer DDM4000: Improve stability and add soft-takeover for encoder knobs `#4318 <https://github.com/mixxxdj/mixxx/pull/4318>`_ `#4799 <https://github.com/mixxxdj/mixxx/pull/4799>`_
+* Denon MC7000: Fix 'inverted shift' bug in the controller mapping `#4755 <https://github.com/mixxxdj/mixxx/pull/4755>`_
+* Fix spinback and break effect in the controller engine `#4708 <https://github.com/mixxxdj/mixxx/pull/4708>`_
+* Fix scratch on first wheel touch `#4761 <https://github.com/mixxxdj/mixxx/pull/4761>`_ `lp:1800343 <https://bugs.launchpad.net/mixxx/+bug/1800343>`_
+* Preferences: Prevent controller settings being treated as changed even though they were not `#4721 <https://github.com/mixxxdj/mixxx/pull/4721>`_ `lp:1920844 <https://bugs.launchpad.net/mixxx/+bug/1920844>`_
+* Fix rare crash when closing the progress dialog `#4695 <https://github.com/mixxxdj/mixxx/pull/4695>`_
+* Prevent preferences dialog from going out of screen `#4613 <https://github.com/mixxxdj/mixxx/pull/4613>`_
+* Fix undesired jump-cuts in Auto DJ `#4693 <https://github.com/mixxxdj/mixxx/pull/4693>`_ `lp:1948975 <https://bugs.launchpad.net/mixxx/+bug/1948975>`_ `lp:1893197 <https://bugs.launchpad.net/mixxx/+bug/1893197>`_
+* Fix bug that caused Auto DJ to stop playback after some time `#4698 <https://github.com/mixxxdj/mixxx/pull/4698>`_ `lp:1893197 <https://bugs.launchpad.net/mixxx/+bug/1893197>`_ `lp:1961970 <https://bugs.launchpad.net/mixxx/+bug/1961970>`_
+* Do not reset crossfader when Auto DJ is deactivated `#4714 <https://github.com/mixxxdj/mixxx/pull/4714>`_ `lp:1965298 <https://bugs.launchpad.net/bugs/1965298>`_
+* Change the minimum Auto DJ transition time to -99 `#4768 <https://github.com/mixxxdj/mixxx/pull/4768>`_ `lp:1975552 <https://bugs.launchpad.net/mixxx/+bug/1975552>`_
+* Samplers, crates, playlists: fix storing import/export paths `#4699 <https://github.com/mixxxdj/mixxx/pull/4699>`_ `lp:1964508 <https://bugs.launchpad.net/bugs/1964508>`_
+* Library: keep hidden tracks in history `#4725 <https://github.com/mixxxdj/mixxx/pull/4725>`_
+* Broadcasting: allow multiple connections to same mount if only one is enabled `#4750 <https://github.com/mixxxdj/mixxx/pull/4750>`_ `lp:1972813 <https://bugs.launchpad.net/mixxx/+bug/1972813>`_
+* Fix a rare mouse vanish bug when controlling knobs `#4744 <https://github.com/mixxxdj/mixxx/pull/4744>`_ `lp:1130794 <https://bugs.launchpad.net/mixxx/+bug/1130794>`_ `lp:1969278 <https://bugs.launchpad.net/mixxx/+bug/1969278>`_
+* Restore keylock from configuration and fix pitch ratio rounding issue `#4756 <https://github.com/mixxxdj/mixxx/pull/4756>`_ `lp:1943180 <https://bugs.launchpad.net/mixxx/+bug/1943180>`_
+* Improve CSV export of playlists and crates and fix empty rating column `#4762 <https://github.com/mixxxdj/mixxx/pull/4762>`_
+* Fix passthrough-related crash in waveform code `#4789 <https://github.com/mixxxdj/mixxx/pull/4789>`_ `#4791 <https://github.com/mixxxdj/mixxx/pull/4791>`_ `lp:1959489 <https://bugs.launchpad.net/mixxx/+bug/1959489>`_ `lp:1977662 <https://bugs.launchpad.net/mixxx/+bug/1977662>`_
+* Passthrough: stop rendering waveforms and disable Cue/Play indicators `4793 <https://github.com/mixxxdj/mixxx/pull/4793>`_
+
+.. _v2-3-2:
+
+`2.3.2 <https://launchpad.net/mixxx/+milestone/2.3.2>`_ (2022-01-31)
+------------------------------------------------------------------------
+
+
+* Playlist: Enable sorting by color `#4352 <https://github.com/mixxxdj/mixxx/pull/4352>`_ `lp:1945976 <https://bugs.launchpad.net/mixxx/+bug/1945976>`_
+* Fix crash when using Doubling/Halving/etc. BPM from track's Properties window on tracks without BPM `#4587 <https://github.com/mixxxdj/mixxx/pull/4587>`_ `lp:1955853 <https://bugs.launchpad.net/mixxx/+bug/1955853>`_
+* Fix writing metadata on Windows for files that have never been played `#4586 <https://github.com/mixxxdj/mixxx/pull/4586>`_ `lp:1955331 <https://bugs.launchpad.net/mixxx/+bug/1955331>`_
+* Preserve file creation time when writing metadata on Windows `#4586 <https://github.com/mixxxdj/mixxx/pull/4586>`_ `lp1955314 <https://bugs.launchpad.net/mixxx/+bug/1955314>`_
+* Fix handling of file extension when importing and exporting sampler settings `#4539 <https://github.com/mixxxdj/mixxx/pull/4539>`_
+* Fix crash when using an empty directory as resource path using the ``--resource-path`` command line option `#4575 <https://github.com/mixxxdj/mixxx/pull/4575>`_ `lp:1934560 <https://bugs.launchpad.net/mixxx/+bug/1934560>`_
+* Pioneer DDJ-SB3: Add controller mapping `#3821 <https://github.com/mixxxdj/mixxx/pull/3821>`_
+* Don't wipe sound config during startup if configured devices are unavailable `#4544 <https://github.com/mixxxdj/mixxx/pull/4544>`_
+* Append selected file extension when exporting to playlist files `#4531 <https://github.com/mixxxdj/mixxx/pull/4531>`_ `lp:1889352 <https://bugs.launchpad.net/mixxx/+bug/1889352>`_
+* Fix crash when using midi.sendShortMsg and platform vnc `#4635 <https://github.com/mixxxdj/mixxx/pull/4635>`_ `lp:1956144 <https://bugs.launchpad.net/mixxx/+bug/1956144>`_
+* Traktor S3: Fix timedelta calculation bugs `#4646 <https://github.com/mixxxdj/mixxx/pull/4646>`_ `lp:1958925 <https://bugs.launchpad.net/mixxx/+bug/1958925>`_
+
+Packaging
+^^^^^^^^^
+
+
+* Downloads of external dependencies are placed in build/downloads
+* The sources for libkeyfinder are now expected in build/downloads/libkeyfinder-2.2.6.zip instead of build/download/libkeyfinder/v2.2.6.zip
+* CMake: Adjust the download directory and name of external dependencies `#4511 <https://github.com/mixxxdj/mixxx/pull/4511>`_
+* Fix/Improve Appstream metainfo
+  `#4344 <https://github.com/mixxxdj/mixxx/pull/4344>`_
+  `#4346 <https://github.com/mixxxdj/mixxx/pull/4346>`_
+  `#4349 <https://github.com/mixxxdj/mixxx/pull/4349>`_
+
+.. _v2-3-1:
+
+`2.3.1 <https://launchpad.net/mixxx/+milestone/2.3.1>`_ (2021-09-29)
+------------------------------------------------------------------------
+
+
+* Added mapping for the Numark DJ2GO2 Touch controller `#4108 <https://github.com/mixxxdj/mixxx/pull/4108>`_ `#4287 <https://github.com/mixxxdj/mixxx/pull/4287>`_
 * Added mapping for the Numark Mixtrack Pro FX controller `#4160 <https://github.com/mixxxdj/mixxx/pull/4160>`_
+* Updated mapping for Behringer DDM4000 mixer `#4262 <https://github.com/mixxxdj/mixxx/pull/4262>`_
+* Updated mapping for Denon MC7000 controller `#4021 <https://github.com/mixxxdj/mixxx/pull/4021>`_
+* Hercules Inpulse 300: Add better FX controls and other minor improvements `#4246 <https://github.com/mixxxdj/mixxx/pull/4246>`_
+* Denon MC7000: Improve slip mode and jog wheel handling `#4021 <https://github.com/mixxxdj/mixxx/pull/4021>`_ `#4324 <https://github.com/mixxxdj/mixxx/pull/4324>`_
 * Disabled detection of keyboards and mice as HID controllers `#4243 <https://github.com/mixxxdj/mixxx/pull/4243>`_
+* Disabled detection of all HID controllers with Apple's vendor ID. Apple doesn't build actual controllers. `#4260 <https://github.com/mixxxdj/mixxx/pull/4260>`_ `#4273 <https://github.com/mixxxdj/mixxx/pull/4273>`_
 * Add support for HiDPI scale factors of 125% and 175% (only with Qt 5.14+) `lp1938102 <https://bugs.launchpad.net/mixxx/+bug/1938102>`_ `#4161 <https://github.com/mixxxdj/mixxx/pull/4161>`_
 * Fix unhandled exception when parsing corrupt Rekordbox PDB files `lp1933853 <https://bugs.launchpad.net/mixxx/+bug/1933853>`_ `#4040 <https://github.com/mixxxdj/mixxx/pull/4040>`_
 * Fix Echo effect adding left channel samples to right channel `#4141 <https://github.com/mixxxdj/mixxx/pull/4141>`_
@@ -23,7 +88,7 @@ Changelog
 * Fix bad phase seek when a channel's audible status changes `#4156 <https://github.com/mixxxdj/mixxx/pull/4156>`_
 * Tango skin: Show crossfader assign buttons by default `#4046 <https://github.com/mixxxdj/mixxx/pull/4046>`_
 * Fix keyfinder library in arm64 builds `#4047 <https://github.com/mixxxdj/mixxx/pull/4047>`_
-* Fix wrong track being recorded in History `lp1933991 <https://bugs.launchpad.net/mixxx/+bug/1933991>`_ `#4041 <https://github.com/mixxxdj/mixxx/pull/4041>`_ `#4059 <https://github.com/mixxxdj/mixxx/pull/4059>`_ `#4107 <https://github.com/mixxxdj/mixxx/pull/4107>`_
+* Fix wrong track being recorded in History `lp1933991 <https://bugs.launchpad.net/mixxx/+bug/1933991>`_ `#4041 <https://github.com/mixxxdj/mixxx/pull/4041>`_ `#4059 <https://github.com/mixxxdj/mixxx/pull/4059>`_ `#4107 <https://github.com/mixxxdj/mixxx/pull/4107>`_ `#4296 <https://github.com/mixxxdj/mixxx/pull/4296>`_
 * Fix support for relative paths in the skin system which caused missing images in third-party skins `#4151 <https://github.com/mixxxdj/mixxx/pull/4151>`_
 * Fix relocation of directories with special/reserved characters in path name `#4146 <https://github.com/mixxxdj/mixxx/pull/4146>`_
 * Update keyboard shortcuts sheet `#4042 <https://github.com/mixxxdj/mixxx/pull/4042>`_
@@ -33,6 +98,16 @@ Changelog
 * Fix custom key notation not restored correctly after restart `#4136 <https://github.com/mixxxdj/mixxx/pull/4136>`_
 * Traktor S3: Disable scratch when switching decks to prevent locked scratch issue `#4073 <https://github.com/mixxxdj/mixxx/pull/4073>`_
 * FFmpeg: Ignore inaudible samples before start of stream `#4245 <https://github.com/mixxxdj/mixxx/pull/4245>`_
+* Controller Preferences: Don't automatically enable checkbox if controller is disabled `#4244 <https://github.com/mixxxdj/mixxx/pull/4244>`_ `lp:1941042 <https://bugs.launchpad.net/mixxx/+bug/1941042>`_
+* Tooltips: Always show tooltips in preferences `#4198 <https://github.com/mixxxdj/mixxx/pull/4198>`_ `lp:1840493 <https://bugs.launchpad.net/mixxx/+bug/1840493>`_
+* Tooltips: Use item label for tooltips in library side bar and show ID when debugging. `#4247 <https://github.com/mixxxdj/mixxx/pull/4247>`_
+* Library sidebar: Also activate items on PageUp/Down events. `#4237 <https://github.com/mixxxdj/mixxx/pull/4237>`_
+* Fix handling of preview button cell events in developer mode. `#4264 <https://github.com/mixxxdj/mixxx/pull/4264>`_ `lp:1929141 <https://bugs.launchpad.net/mixxx/+bug/1929141>`_
+* Auto DJ: Fix bug which could make an empty track stop Auto DJ. `#4267 <https://github.com/mixxxdj/mixxx/pull/4267>`_ `lp:1941743 <https://bugs.launchpad.net/mixxx/+bug/1941743>`_
+* Fix Auto DJ skipping tracks randomly `#4319 <https://github.com/mixxxdj/mixxx/pull/4319>`_ `lp1941989 <https://bugs.launchpad.net/mixxx/+bug/1941989>`_
+* Fix high CPU load due to extremely high internal sync clock values `#4312 <https://github.com/mixxxdj/mixxx/pull/4312>`_ `lp1943320 <https://bugs.launchpad.net/mixxx/+bug/1943320>`_
+* Fix preference option for re-analyzing beatgrids imported from other software `#4288 <https://github.com/mixxxdj/mixxx/pull/4288>`_
+* Fix wrong base tag used for deployment and displayed in About dialog `#4070 <https://github.com/mixxxdj/mixxx/pull/4070>`_
 
 Packaging
 ^^^^^^^^^
@@ -43,6 +118,11 @@ Packaging
 * .desktop file has be renamed to org.mixxx.Mixxx.desktop according to Freedesktop standards `#4206 <https://github.com/mixxxdj/mixxx/pull/4206>`_
 * Uses system provided hidapi library if version >= 0.10.1 `#4215 <https://github.com/mixxxdj/mixxx/pull/4215>`_
 * Please update PortAudio to `19.7 <https://github.com/PortAudio/portaudio/releases/tag/v19.7.0>`_ if you have not done so already. This is required for Mixxx to work with PipeWire via the JACK API for many devices.
+* Install multiple sizes of rasterized icons `#4204 <https://github.com/mixxxdj/mixxx/pull/4204>`_ `#4315 <https://github.com/mixxxdj/mixxx/pull/4315>`_ `#4254 <https://github.com/mixxxdj/mixxx/pull/4254>`_
+* CMake: Fixed detection of SoundTouch pkgconfig file and version `#4209 <https://github.com/mixxxdj/mixxx/pull/4209>`_
+* Fix AppStream metainfo `#4205 <https://github.com/mixxxdj/mixxx/pull/4205>`_ `#4317 <https://github.com/mixxxdj/mixxx/pull/4317>`_
+
+.. _v2-3-0:
 
 `2.3.0 <https://launchpad.net/mixxx/+milestone/2.3.0>`_ (2021-06-28)
 ------------------------------------------------------------------------
@@ -205,8 +285,10 @@ Other
 * Enable CUE sheet recording by default `#3374 <https://github.com/mixxxdj/mixxx/pull/3374>`_
 * Fix crash when double clicking GLSL waveforms with right mouse button `#3904 <https://github.com/mixxxdj/mixxx/pull/3904>`_
 * Derive Mixxx version from ``git describe`` `#3824 <https://github.com/mixxxdj/mixxx/pull/3824>`_ `#3841 <https://github.com/mixxxdj/mixxx/pull/3841>`_ `#3848 <https://github.com/mixxxdj/mixxx/pull/3848>`_
-* Improve tapping the bpm of a deck `#3790 <https://github.com/mixxxdj/mixxx/pull/3790>`_ `lp:1882776 <https://bugs.launchpad.net/mixxx/+bug/1882776>`_
+* Improve tapping the BPM of a deck `#3790 <https://github.com/mixxxdj/mixxx/pull/3790>`_ `lp:1882776 <https://bugs.launchpad.net/mixxx/+bug/1882776>`_
 * And countless other small fixes and improvements (too many to list them all!)
+
+.. _v2-2-4:
 
 `2.2.4 <https://launchpad.net/mixxx/+milestone/2.2.4>`_ (2020-06-27)
 ------------------------------------------------------------------------
@@ -232,6 +314,8 @@ Other
 * Only apply ducking gain in manual ducking mode when talkover is enabed `lp:1394968 <https://bugs.launchpad.net/mixxx/+bug/1394968>`_ `lp:1737113 <https://bugs.launchpad.net/mixxx/+bug/1737113>`_ `lp:1662536 <https://bugs.launchpad.net/mixxx/+bug/1662536>`_ `#2759 <https://github.com/mixxxdj/mixxx/pull/2759>`_
 * Ignore MIDI Clock Messages (0xF8) because they are not usable in Mixxx and inhibited the screensaver `#2786 <https://github.com/mixxxdj/mixxx/pull/2786>`_
 
+.. _v2-2-3:
+
 `2.2.3 <https://launchpad.net/mixxx/+milestone/2.2.3>`_ (2019-11-24)
 ------------------------------------------------------------------------
 
@@ -253,6 +337,8 @@ Other
 * Fix keyboard shortcut for View > Skin Preferences `lp:1851993 <https://bugs.launchpad.net/mixxx/+bug/1851993>`_ `#2358 <https://github.com/mixxxdj/mixxx/pull/2358>`_ `#2372 <https://github.com/mixxxdj/mixxx/pull/2372>`_
 * Reloop Terminal Mix: Fix mapping of sampler buttons 5-8 `lp:1846966 <https://bugs.launchpad.net/mixxx/+bug/1846966>`_ `#2330 <https://github.com/mixxxdj/mixxx/pull/2330>`_
 
+.. _v2-2-2:
+
 `2.2.2 <https://launchpad.net/mixxx/+milestone/2.2.2>`_ (2019-08-10)
 ------------------------------------------------------------------------
 
@@ -262,10 +348,10 @@ Other
 * Disable track metadata export for .ogg files and TagLib 1.11.1. `lp:1833190 <https://bugs.launchpad.net/mixxx/+bug/1833190>`_
 * Fix interaction of hot cue buttons and looping. `lp:1778246 <https://bugs.launchpad.net/mixxx/+bug/1778246>`_
 * Fix detection of moved tracks. `#2197 <https://github.com/mixxxdj/mixxx/pull/2197>`_
-* Fix playlist import. `lp:16878282 <https://bugs.launchpad.net/mixxx/+bug/16878282>`_
+* Fix playlist import. `#2200 <https://github.com/mixxxdj/mixxx/pull/2200>`_ `lp:1687828 <https://bugs.launchpad.net/mixxx/+bug/1687828>`_
 * Fix updating playlist labels. `lp:1837315 <https://bugs.launchpad.net/mixxx/+bug/1837315>`_
 * Fix potential segfault on exit. `lp:1828360 <https://bugs.launchpad.net/mixxx/+bug/1828360>`_
-* Fix parsing of invalid bpm values in MP3 files. `lp:1832325 <https://bugs.launchpad.net/mixxx/+bug/1832325>`_
+* Fix parsing of invalid BPM values in MP3 files. `lp:1832325 <https://bugs.launchpad.net/mixxx/+bug/1832325>`_
 * Fix crash when removing rows from empty model. `#2128 <https://github.com/mixxxdj/mixxx/pull/2128>`_
 * Fix high DPI scaling of RGB overview waveforms. `#2090 <https://github.com/mixxxdj/mixxx/pull/2090>`_
 * Fix for OpenGL SL detection on macOS. `lp:1828019 <https://bugs.launchpad.net/mixxx/+bug/1828019>`_
@@ -274,6 +360,8 @@ Other
 * Tango64: Re-enable 64 samplers. `#2223 <https://github.com/mixxxdj/mixxx/pull/2223>`_
 * Numark DJ2Go re-enable note-off for deck A cue button. `#2087 <https://github.com/mixxxdj/mixxx/pull/2087>`_
 * Replace Flanger with QuickEffect in keyboard mapping. `#2233 <https://github.com/mixxxdj/mixxx/pull/2233>`_
+
+.. _v2-2-1:
 
 `2.2.1 <https://launchpad.net/mixxx/+milestone/2.2.1>`_ (2019-04-22)
 ------------------------------------------------------------------------
@@ -287,6 +375,8 @@ Other
 * added quick effect enable button to the control picker menu
 * Fix Cover Window close issue with empty cover arts
 * Fix Numark Mixtrack 3 mapping. `#2057 <https://github.com/mixxxdj/mixxx/pull/2057>`_
+
+.. _v2-2-0:
 
 `2.2.0 <https://launchpad.net/mixxx/+milestone/2.2.0>`_ (2018-12-17)
 ------------------------------------------------------------------------
@@ -336,6 +426,8 @@ Miscellaneous
   scrolling waveforms.
 * Support IRC/AIM/ICQ broadcast metadata.
 
+.. _v2-1-8:
+
 `2.1.8 <https://launchpad.net/mixxx/+milestone/2.1.8>`_ (2019-04-07)
 ------------------------------------------------------------------------
 
@@ -346,6 +438,8 @@ Miscellaneous
 * Fix resdicovering purged tracks in all cases. `lp:1821514 <https://bugs.launchpad.net/mixxx/+bug/1821514>`_
 * Fix dropping track from OSX Finder. `lp:1822424 <https://bugs.launchpad.net/mixxx/+bug/1822424>`_
 
+.. _v2-1-7:
+
 `2.1.7 <https://launchpad.net/mixxx/+milestone/2.1.7>`_ (2019-01-15)
 ------------------------------------------------------------------------
 
@@ -355,6 +449,8 @@ Miscellaneous
 * Fix direction of pitch bend buttons when inverting rate slider `lp:1770745 <https://bugs.launchpad.net/mixxx/+bug/1770745>`_
 * Use first loaded deck if no playing deck is found `lp:1784185 <https://bugs.launchpad.net/mixxx/+bug/1784185>`_
 * Encode file names correctly on macOS `lp:1776949 <https://bugs.launchpad.net/mixxx/+bug/1776949>`_
+
+.. _v2-1-6:
 
 `2.1.6 <https://launchpad.net/mixxx/+milestone/2.1.6>`_ (2018-12-23)
 ------------------------------------------------------------------------
@@ -379,6 +475,8 @@ Miscellaneous
 * search for decoration characters like "˚". `lp:1802730 <https://bugs.launchpad.net/mixxx/+bug/1802730>`_
 * Fix cue button blinking after pressing eject on an empty deck. `lp:1808222 <https://bugs.launchpad.net/mixxx/+bug/1808222>`_
 
+.. _v2-1-5:
+
 `2.1.5 <https://launchpad.net/mixxx/+milestone/2.1.5>`_ (2018-10-28)
 ------------------------------------------------------------------------
 
@@ -393,6 +491,8 @@ Miscellaneous
 * Improve speed of importing iTunes library. `lp:1785545 <https://bugs.launchpad.net/mixxx/+bug/1785545>`_
 * Add 2 deck mapping for DJTechTools MIDI Fighter Twister.
 
+.. _v2-1-4:
+
 `2.1.4 <https://launchpad.net/mixxx/+milestone/2.1.4>`_ (2018-08-29)
 ------------------------------------------------------------------------
 
@@ -402,11 +502,15 @@ source code, but the Jenkins build configuration
 was changed to delete the Jenkins workspace before
 each build. `lp:1751482 <https://bugs.launchpad.net/mixxx/+bug/1751482>`_
 
+.. _v2-1-3:
+
 `2.1.3 <https://launchpad.net/mixxx/+milestone/2.1.3>`_ (2018-08-20)
 ------------------------------------------------------------------------
 
 Fix a severe performance regression on Windows:
 `Mixxx 2.1.2 running much slower than 2.1.1 <https://mixxx.org/forums/viewtopic.php?f=3&t=12082>`_
+
+.. _v2-1-2:
 
 `2.1.2 <https://launchpad.net/mixxx/+milestone/2.1.2>`_ (2018-08-10)
 ------------------------------------------------------------------------
@@ -427,6 +531,8 @@ Here is a quick summary of what is new in Mixxx 2.1.2:
 * Shade: remove superfluid margins and padding in sampler.xml. `lp:1773588 <https://bugs.launchpad.net/mixxx/+bug/1773588>`_
 * Deere: Fix background-color code.
 * ITunes: Don't stop import in case of duplicated Playlists. `lp:1783493 <https://bugs.launchpad.net/mixxx/+bug/1783493>`_
+
+.. _v2-1-1:
 
 `2.1.1 <https://launchpad.net/mixxx/+milestone/2.1.1>`_ (2018-06-13)
 ------------------------------------------------------------------------
@@ -450,6 +556,8 @@ Here is a quick summary of what is new in Mixxx 2.1.1:
 * Fidlib: Thread-safe and reentrant generation of filters. `lp:1765210 <https://bugs.launchpad.net/mixxx/+bug/1765210>`_
 * Fix unresponsive scrolling through crates & playlists using encoder. `lp:1719474 <https://bugs.launchpad.net/mixxx/+bug/1719474>`_
 * Swap default values for temp/perm rate changes. `lp:1764254 <https://bugs.launchpad.net/mixxx/+bug/1764254>`_
+
+.. _v2-1-0:
 
 `2.1.0 <https://launchpad.net/mixxx/+milestone/2.1.0>`_ (2018-04-15)
 ------------------------------------------------------------------------
@@ -571,6 +679,8 @@ We hope you have as much fun with Mixxx as we do!
 
 For a full list of new features and bugfixes, check out the
 `2.1.0 milestone on Launchpad <https://launchpad.net/mixxx/+milestone/2.1.0>`_.
+
+.. _v2-0-0:
 
 `2.0.0 <https://launchpad.net/mixxx/+milestone/2.0.0>`_ (2015-12-31)
 ------------------------------------------------------------------------
